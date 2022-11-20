@@ -15,7 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 public class Contact {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String email;
     private String contactName;

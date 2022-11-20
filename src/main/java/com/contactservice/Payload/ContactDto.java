@@ -6,7 +6,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 public class ContactDto {
-    private int cId;
+    private int id;
     private String email;
     private String contactName;
 }
