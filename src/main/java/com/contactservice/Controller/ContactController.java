@@ -16,7 +16,7 @@ public class ContactController {
     @Autowired
     private ContactService contactServices;
 
-    @PostMapping("/Add/user:{id}/")
+    @PostMapping("/Add/user:{id}")
     public ResponseEntity<ContactDto> createContact(@RequestBody ContactDto contactDto, @PathVariable Integer id) {
         ContactDto createContact = this.contactServices.createContact(contactDto, id);
         return new ResponseEntity<>(createContact, HttpStatus.CREATED);
@@ -27,7 +27,7 @@ public class ContactController {
         return ResponseEntity.ok(this.contactServices.getAllContact());
     }
 
-    @GetMapping("/GetContact/User:{userId}/")
+    @GetMapping("/GetContact/User:{userId}")
     public ResponseEntity<List<ContactDto>> getContactByUser(@PathVariable Integer userId) {
         List<ContactDto> contacts = this.contactServices.getContactByUser(userId);
         return new ResponseEntity<List<ContactDto>>(contacts, HttpStatus.OK);
